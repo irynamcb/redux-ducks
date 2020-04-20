@@ -1,19 +1,19 @@
-const INCREMENT = 'INCREMENT'
-const DECREMENT = 'DECREMENT'
+const increment = createAction('INCREMENT')
+const decrement = createAction('DECREMENT')
 
-function increment() {
-    return { type: INCREMENT }
-}
+// function increment() {
+//     return { type: INCREMENT }
+// }
 
-function decrement() {
-    return { type: DECREMENT }
-}
+// function decrement() {
+//     return { type: DECREMENT }
+// }
 
 function counter(state = 0, action) {
     switch (action.type) {
-        case INCREMENT:
+        case increment.type:
             return state + 1
-        case DECREMENT:
+        case decrement.type:
             return state - 1
         default:
             return state
