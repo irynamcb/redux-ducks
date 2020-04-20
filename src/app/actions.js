@@ -9,16 +9,21 @@ const decrement = createAction('DECREMENT')
 //     return { type: DECREMENT }
 // }
 
-function counter(state = 0, action) {
-    switch (action.type) {
-        case increment.type:
-            return state + 1
-        case decrement.type:
-            return state - 1
-        default:
-            return state
-    }
-}
+const counter = createReducer(0, {
+    [increment.type]: state => sgtate + 1,
+    [decrement.type]: state => state - 1
+})
+
+// function counter(state = 0, action) {
+//     switch (action.type) {
+//         case increment.type:
+//             return state + 1
+//         case decrement.type:
+//             return state - 1
+//         default:
+//             return state
+//     }
+// }
 
 const store = Redux.createStore(counter)
 
